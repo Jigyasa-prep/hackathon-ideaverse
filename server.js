@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// अपनी Gemini API Key यहाँ डालें
+
 require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
 
@@ -29,7 +29,7 @@ async function getAIPeritinerary(dest, days) {
         return iternaryArray;
     } catch (e) {
         console.error("AI Error:", e);
-        // Fallback Logic: कम से कम यूजर को खाली स्क्रीन न दिखे
+        // Fallback Logic: 
         return Array.from({ length: days }, (_, i) => ({
             day: i + 1,
             morning: `Explore central ${dest}`,
