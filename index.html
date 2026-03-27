@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripGenie AI - Autonomous Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>✈️ TripGenie AI</h1>
+        <p>Your Proactive Autonomous Travel Agent</p>
+    </header>
+
+    <div class="container">
+        <div class="form-box">
+            <input type="text" id="source" placeholder="From (e.g., Delhi)">
+            <input type="text" id="destination" placeholder="To (e.g., Mumbai)">
+            
+            <select id="preference">
+                <option value="fast">⚡ Fastest Route</option>
+                <option value="cheap">💰 Cheapest Route</option>
+            </select>
+
+            <input type="number" id="days" placeholder="Days" min="1" max="7" style="width: 70px;">
+            
+            <input type="number" id="available-time" placeholder="Hrs Available" min="1" style="width: 110px;">
+
+            <button onclick="planTrip()">🚀 Plan My Trip</button>
+            <button onclick="simulateDelay()" class="btn-warn">⚠️ Simulate Delay</button>
+        </div>
+
+        <div id="alert-box"></div>
+
+        <div id="map"></div>
+
+        <div id="result-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
